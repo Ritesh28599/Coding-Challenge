@@ -1,0 +1,32 @@
+<ul>
+    <li *ngFor="let menu of menuData">
+      {{ menu.status }}
+      <ul>
+        <li *ngFor="let child of menu.children">
+          {{ child.name }}
+        </li>
+      </ul>
+    </li>
+  </ul>
+ <!-- //--------- Tree / Node structure Code ------------>
+ 
+ <!-- <ul>
+  <ng-container *ngFor="let menu of menuData">
+    <li>
+      {{ menu.title }}
+      <ng-container *ngTemplateOutlet="menuNodeTemplate; context: { $implicit: menu }"></ng-container>
+    </li>
+  </ng-container>
+</ul>
+
+<ng-template #menuNodeTemplate let-menu>
+  <ul *ngIf="menu.children && menu.children.length > 0">
+    <ng-container *ngFor="let child of menu.children">
+      <li>
+        {{ child.title }}
+        <ng-container *ngTemplateOutlet="menuNodeTemplate; context: { $implicit: child }"></ng-container>
+      </li>
+    </ng-container>
+  </ul>
+</ng-template>
+ -->
